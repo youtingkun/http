@@ -2,10 +2,7 @@
   "name": "http-axios",
   "version": "1.0.0",
   "description": "http-axios",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "build/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/youtingkun/http.git"
@@ -19,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/youtingkun/http/issues"
   },
-  "homepage": "https://github.com/youtingkun/http#readme"
+  "homepage": "https://github.com/youtingkun/http#readme",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.2",
+    "source-map-loader": "^3.0.1",
+    "ts-loader": "^9.2.8"
+  }
 }

@@ -1,5 +1,5 @@
 
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse,AxiosInstance } from "axios";
 
 const showStatus = (status) => {
   let mes = "";
@@ -43,16 +43,16 @@ const showStatus = (status) => {
   return `${mes}，请检查网络或联系管理员！`;
 };
 
-const service = axios.create({
+const service:AxiosInstance = axios.create({
   // 判断环境
   baseURL: process.env.NODE_ENV === "production" ? `/` : "/apis",
   headers: {
-    get: {
-      "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-    },
-    post: {
-      "Content-Type": "application/json;charset=utf-8"
-    }
+    // get: {
+    //   "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+    // },
+    // post: {
+    //   "Content-Type": "application/json;charset=utf-8"
+    // }
   },
   // 是否跨站点访问控制请求
   withCredentials: true,
@@ -79,7 +79,7 @@ const service = axios.create({
 
 // 请求拦截器
 service.interceptors.request.use(
-  (config) => {
+  (config:AxiosRequestConfig) => {
     return config;
   },
   error => {
@@ -92,7 +92,7 @@ service.interceptors.request.use(
 
 // 响应拦截器
 service.interceptors.response.use(
-  (response) => {
+  (response:AxiosResponse) => {
     const status = response.status;
     let msg = "";
     if (status < 200 || status >= 300) {
