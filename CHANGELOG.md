@@ -1,3 +1,12 @@
+## [1.0.7](https://github.com/youtingkun/http/compare/v1.0.6...v1.0.7) (2022-03-25)
+
+
+### Features
+
+* name ([87cbcb2](https://github.com/youtingkun/http/commit/87cbcb2e49482524592a9c3b6bf2666e3900520a))
+
+
+
 ## [1.0.6](https://github.com/youtingkun/http/compare/v1.0.5...v1.0.6) (2022-03-25)
 
 
