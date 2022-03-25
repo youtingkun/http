@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "declaration": true, // 将生成.d.ts文件
-      "allowJs": true,
-      "moduleResolution": "node",
-      "sourceMap": true
-    }
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "declaration": true, // 是否生成.d.ts文件
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true
+  }
 }
