@@ -1,7 +1,7 @@
 
 import axios, { AxiosRequestConfig, AxiosResponse,AxiosInstance } from "axios";
 
-const showStatus = (status) => {
+const showStatus = (status:Number) => {
   let mes = "";
   switch (status) {
     case 400:
