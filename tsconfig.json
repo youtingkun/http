@@ -5,6 +5,7 @@
       "target": "es5",
       "declaration": true, // 将生成.d.ts文件
       "allowJs": true,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "sourceMap": true
     }
 }
