@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/youtingkun/http/compare/v1.0.3...v1.0.4) (2022-03-25)
+
+
+### Features
+
+* ts ([635a4d8](https://github.com/youtingkun/http/commit/635a4d81f0fa345ed851c9825e8b7cdb58e6f1a1))
+
+
+
 ## [1.0.3](https://github.com/youtingkun/http/compare/v1.0.2...v1.0.3) (2022-03-25)
 
 

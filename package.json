@@ -1,6 +1,6 @@
 {
   "name": "http-axios",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "http-axios",
   "main": "build/index.js",
   "repository": {
