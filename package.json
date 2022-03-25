@@ -19,7 +19,8 @@
   "homepage": "https://github.com/youtingkun/http#readme",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "tsc --watch"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {
     "axios": "^0.26.1"
@@ -28,7 +29,11 @@
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "babel-loader": "^8.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "husky": "^7.0.4",
     "source-map-loader": "^3.0.1",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",
