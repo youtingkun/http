@@ -1,7 +1,6 @@
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosInstance } from "axios";
 
-import axios, { AxiosRequestConfig, AxiosResponse,AxiosInstance } from "axios";
-
-const showStatus = (status:Number) => {
+const showStatus = (status: Number) => {
   let mes = "";
   switch (status) {
     case 400:
@@ -43,7 +42,8 @@ const showStatus = (status:Number) => {
   return `${mes}，请检查网络或联系管理员！`;
 };
 
-const service:AxiosInstance = axios.create({
+// 默认配置
+const service: AxiosInstance = axios.create({
   // 判断环境
   baseURL: process.env.NODE_ENV === "production" ? `/` : "/apis",
   headers: {
@@ -56,33 +56,37 @@ const service:AxiosInstance = axios.create({
   },
   // 是否跨站点访问控制请求
   withCredentials: true,
+  // 请求超时时间
   timeout: 30000,
+  // 在请求前对数据进行处理
   transformRequest: [
-    data => {
+    (data) => {
       data = JSON.stringify(data);
       return data;
-    }
+    },
   ],
+  // 如果 `validateStatus` 返回 `true` (或设置为 `null` 或 `undefined`)，promise 将被 resolve; 否则，promise 将被 reject。
   validateStatus() {
     // 使用async-await，处理reject情况较为繁琐，所以全部返回resolve，在业务代码中处理异常
     return true;
   },
+  // 在请求后对数据进行处理
   transformResponse: [
-    data => {
+    (data) => {
       if (typeof data === "string" && data.startsWith("{")) {
         data = JSON.parse(data);
       }
       return data;
-    }
-  ]
+    },
+  ],
 });
 
 // 请求拦截器
 service.interceptors.request.use(
-  (config:AxiosRequestConfig) => {
+  (config: AxiosRequestConfig) => {
     return config;
   },
-  error => {
+  (error) => {
     // 错误抛到业务代码
     error.data = {};
     error.data.msg = "服务器异常，请联系管理员！";
@@ -92,7 +96,7 @@ service.interceptors.request.use(
 
 // 响应拦截器
 service.interceptors.response.use(
-  (response:AxiosResponse) => {
+  (response: AxiosResponse) => {
     const status = response.status;
     let msg = "";
     if (status < 200 || status >= 300) {
@@ -106,7 +110,7 @@ service.interceptors.response.use(
     }
     return response;
   },
-  error => {
+  (error) => {
     // 错误抛到业务代码，这里的状态码为http所规定的状态码
     error.data = {};
     error.data.msg = "请求超时或服务器异常，请检查网络或联系管理员！";
