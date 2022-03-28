@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/youtingkun/http/compare/v1.1.0...v1.1.1) (2022-03-28)
+
+
+### Features
+
+* 修改 ([07c161b](https://github.com/youtingkun/http/commit/07c161bb2bccc399aa15f98c1ec55660599b8130))
+
+
+
 # [1.1.0](https://github.com/youtingkun/http/compare/v1.0.9...v1.1.0) (2022-03-25)
 
 
